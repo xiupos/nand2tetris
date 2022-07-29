@@ -5,7 +5,7 @@ assert() {
   input_a="$2"
   input_b="$3"
 
-  actual=$(./build/VNand $2 $3)
+  actual=$(./build/VNand $input_a $input_b)
 
   if [ "$actual" = "$expected" ]; then
     echo "$input_a, $input_b => $actual"
