@@ -1,0 +1,7 @@
+BasedOnStyle: LLVM
+IndentWidth: 2
+Language: Cpp
+Standard: Auto
+ColumnLimit: 120
+UseCRLF: false
+# AccessModifierOffset: -4
