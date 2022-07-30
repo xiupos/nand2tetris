@@ -1,10 +1,10 @@
 circuit = top1
 
-VERILATOR = verilator
+V = verilator
 blddir = build
 
 $(blddir)/V$(circuit): $(circuit).cpp $(circuit).v
-	verilator -Wall --Mdir $(blddir) --cc --exe --build $?
+	$(V) -Wall --Mdir $(blddir) --cc --exe --build $?
 
 .PHONY: test
 run: $(blddir)/V$(circuit)
