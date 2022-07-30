@@ -5,6 +5,8 @@ module top1 (
   output wire or_out,
   output wire xor_out,
   output wire mux_out,
+  output wire dmux_out_a,
+  output wire dmux_out_b,
   input wire in,
   input wire a,
   input wire b,
@@ -38,6 +40,12 @@ module top1 (
     .out(mux_out),
     .a(a),
     .b(b),
+    .sel(sel)
+  );
+  DMux dmux0 (
+    .a(dmux_out_a),
+    .b(dmux_out_b),
+    .in(in),
     .sel(sel)
   );
 endmodule

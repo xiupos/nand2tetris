@@ -1,28 +1,22 @@
 module DMux (
-  output wire out,
-  input wire a,
-  input wire b,
+  output wire a,
+  output wire b,
+  input wire in,
   input wire sel
 );
   wire not_sel;
-  wire temp0, temp1;
   Not not0 (
     .out(not_sel),
     .in(sel)
   );
   And and0 (
-    .out(temp0),
-    .a(a),
+    .out(a),
+    .a(in),
     .b(not_sel)
   );
   And and1 (
-    .out(temp1),
-    .a(b),
+    .out(b),
+    .a(in),
     .b(sel)
-  );
-  Or or0 (
-    .out(out),
-    .a(temp0),
-    .b(temp1)
   );
 endmodule

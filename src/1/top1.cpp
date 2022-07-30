@@ -112,6 +112,23 @@ int main(int argc, char **argv, char **env) {
     cout << "  " << to_string(!!sel) << "  ";
     cout << "|| " << to_string(top1->mux_out) << endl;
   }
+  cout << endl;
+
+  // DMux
+  cout << "DMux Test" << endl;
+  cout << " in  sel || a  b " << endl;
+  cout << "---------**------" << endl;
+  for (int i = 0; i < 4; i++) {
+    int in = (i & 1 << 0) >> 0;
+    int sel = (i & 1 << 1) >> 1;
+    top1->in = in;
+    top1->sel = sel;
+    top1->eval();
+    cout << "  " << to_string(!!in) << " ";
+    cout << "  " << to_string(!!sel) << "  ";
+    cout << "|| " << to_string(top1->dmux_out_a) << " ";
+    cout << " " << to_string(top1->dmux_out_b) << endl;
+  }
 
   top1->final();
   delete top1;
