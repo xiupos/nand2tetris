@@ -18,6 +18,7 @@ int main(int argc, char **argv, char **env) {
   Verilated::commandArgs(argc, argv);
   Vtop1 *top1 = new Vtop1;
 
+  // Nand
   cout << "Nand Test" << endl;
   cout << " a  b || o " << endl;
   cout << "------**---" << endl;
@@ -31,9 +32,9 @@ int main(int argc, char **argv, char **env) {
     cout << " " << to_string(!!b) << " ";
     cout << "|| " << to_string(top1->nand_out) << endl;
   }
-
   cout << endl;
 
+  // Not
   cout << "Not Test" << endl;
   cout << " i || o " << endl;
   cout << "---**---" << endl;
@@ -44,9 +45,9 @@ int main(int argc, char **argv, char **env) {
     cout << " " << to_string(!!a) << " ";
     cout << "|| " << to_string(top1->not_out) << endl;
   }
-
   cout << endl;
 
+  // And
   cout << "And Test" << endl;
   cout << " a  b || o " << endl;
   cout << "------**---" << endl;
