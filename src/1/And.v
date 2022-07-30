@@ -3,15 +3,15 @@ module And (
   input wire a,
   input wire b
 );
-  wire temp;
+  wire not_out;
   Nand nand0 (
-    .out(temp),
+    .out(not_out),
     .a(a),
     .b(b)
   );
   Nand nand1 (
     .out(out),
-    .a(temp),
-    .b(temp)
+    .a(not_out),
+    .b(not_out)
   );
 endmodule

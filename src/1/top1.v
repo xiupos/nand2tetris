@@ -2,6 +2,7 @@ module top1 (
   output wire nand_out,
   output wire not_out,
   output wire and_out,
+  output wire or_out,
   input wire a,
   input wire b
 );
@@ -16,6 +17,11 @@ module top1 (
   );
   And and0 (
     .out(and_out),
+    .a(a),
+    .b(b)
+  );
+  Or or0 (
+    .out(or_out),
     .a(a),
     .b(b)
   );
