@@ -9,9 +9,8 @@ module And (
     .a(a),
     .b(b)
   );
-  Nand nand1 (
+  Not not0 (
     .out(out),
-    .a(not_out),
-    .b(not_out)
+    .in(not_out)
   );
 endmodule

@@ -9,14 +9,12 @@ module Or (
     .a(not_a),
     .b(not_b)
   );
-  Nand nand1 (
+  Not not0 (
     .out(not_a),
-    .a(a),
-    .b(a)
+    .in(a)
   );
-  Nand nand2 (
+  Not not1 (
     .out(not_b),
-    .a(b),
-    .b(b)
+    .in(b)
   );
 endmodule
