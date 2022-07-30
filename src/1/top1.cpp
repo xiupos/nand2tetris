@@ -42,7 +42,7 @@ int main(int argc, char **argv, char **env) {
     int in = (i & 1 << 0) >> 0;
     top1->in = in;
     top1->eval();
-    cout << " " << to_string(!!a) << " ";
+    cout << " " << to_string(!!in) << " ";
     cout << "|| " << to_string(top1->not_out) << endl;
   }
   cout << endl;
