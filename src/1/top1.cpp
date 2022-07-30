@@ -39,8 +39,8 @@ int main(int argc, char **argv, char **env) {
   cout << " i || o " << endl;
   cout << "---**---" << endl;
   for (int i = 0; i < 2; i++) {
-    int a = (i & 1 << 0) >> 0;
-    top1->in = a;
+    int in = (i & 1 << 0) >> 0;
+    top1->in = in;
     top1->eval();
     cout << " " << to_string(!!a) << " ";
     cout << "|| " << to_string(top1->not_out) << endl;
