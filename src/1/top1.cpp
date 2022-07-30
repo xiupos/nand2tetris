@@ -93,6 +93,25 @@ int main(int argc, char **argv, char **env) {
     cout << " " << to_string(!!b) << " ";
     cout << "|| " << to_string(top1->xor_out) << endl;
   }
+  cout << endl;
+
+  // Mux
+  cout << "Mux Test" << endl;
+  cout << " a  b  sel || o " << endl;
+  cout << "-----------**---" << endl;
+  for (int i = 0; i < 8; i++) {
+    int a = (i & 1 << 1) >> 1;
+    int b = (i & 1 << 0) >> 0;
+    int sel = (i & 1 << 2) >> 2;
+    top1->a = a;
+    top1->b = b;
+    top1->sel = sel;
+    top1->eval();
+    cout << " " << to_string(!!a) << " ";
+    cout << " " << to_string(!!b) << " ";
+    cout << "  " << to_string(!!sel) << "  ";
+    cout << "|| " << to_string(top1->mux_out) << endl;
+  }
 
   top1->final();
   delete top1;

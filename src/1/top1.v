@@ -4,8 +4,10 @@ module top1 (
   output wire and_out,
   output wire or_out,
   output wire xor_out,
+  output wire mux_out,
   input wire a,
-  input wire b
+  input wire b,
+  input wire sel
 );
   Nand nand0 (
     .out(nand_out),
@@ -30,5 +32,11 @@ module top1 (
     .out(xor_out),
     .a(a),
     .b(b)
+  );
+  Mux mux0 (
+    .out(mux_out),
+    .a(a),
+    .b(b),
+    .sel(sel)
   );
 endmodule
