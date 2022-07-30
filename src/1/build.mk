@@ -1,18 +1,15 @@
-circuit = Nand
+circuit = top1
 
 VERILATOR = verilator
 blddir = build
 
-.PHONY: all
-all: $(blddir)/V$(circuit)
-
-.PHONY: test
-test: $(blddir)/V$(circuit)
-	bash test.sh
-
 $(blddir)/V$(circuit): $(circuit).cpp $(circuit).v
 	verilator -Wall --Mdir $(blddir) --cc --exe --build $?
 
+.PHONY: test
+run: $(blddir)/V$(circuit)
+	$(blddir)/V$(circuit)
+
 .PHONY: clean
 clean:
-	$(RM) -r $(blddir)
+	$(RM) -r $(blddir) obj_dir
