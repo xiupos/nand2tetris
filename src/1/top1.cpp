@@ -40,7 +40,7 @@ int main(int argc, char **argv, char **env) {
   cout << "---**---" << endl;
   for (int i = 0; i < 2; i++) {
     int a = (i & 1 << 0) >> 0;
-    top1->a = a;
+    top1->in = a;
     top1->eval();
     cout << " " << to_string(!!a) << " ";
     cout << "|| " << to_string(top1->not_out) << endl;

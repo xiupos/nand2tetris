@@ -5,6 +5,7 @@ module top1 (
   output wire or_out,
   output wire xor_out,
   output wire mux_out,
+  input wire in,
   input wire a,
   input wire b,
   input wire sel
@@ -16,7 +17,7 @@ module top1 (
   );
   Not not0 (
     .out(not_out),
-    .in(a)
+    .in(in)
   );
   And and0 (
     .out(and_out),
