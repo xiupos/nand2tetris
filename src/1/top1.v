@@ -3,6 +3,7 @@ module top1 (
   output wire not_out,
   output wire and_out,
   output wire or_out,
+  output wire xor_out,
   input wire a,
   input wire b
 );
@@ -22,6 +23,11 @@ module top1 (
   );
   Or or0 (
     .out(or_out),
+    .a(a),
+    .b(b)
+  );
+  Xor xor0 (
+    .out(xor_out),
     .a(a),
     .b(b)
   );
