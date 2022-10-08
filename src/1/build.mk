@@ -1,10 +1,11 @@
 circuit = top1
 
 V = verilator
+CFLAGS = -std=c++20
 blddir = build
 
 $(blddir)/V$(circuit): $(circuit).cpp $(circuit).v
-	$(V) -Wall --Mdir $(blddir) --cc --exe --build $?
+	$(V) -Wall --Mdir $(blddir) -CFLAGS "$(CFLAGS)" --cc --exe --build $?
 
 .PHONY: test
 run: $(blddir)/V$(circuit)
